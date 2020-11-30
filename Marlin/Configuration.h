@@ -79,6 +79,9 @@
 // Printer needs lower baudrate?
 //#define LOWBAUD
 
+// Tall Bear (320mm)?
+//#define TALLBEAR
+
 /**
  * *** VENDORS PLEASE READ ***
  *
@@ -1148,7 +1151,12 @@
 #define Z_MIN_POS 0.15
 #define X_MAX_POS 255
 #define Y_MAX_POS 212.5
-#define Z_MAX_POS 210
+
+#if ENABLED(TALLBEAR)
+ #define Z_MAX_POS 320
+#else
+ #define Z_MAX_POS 210
+#endif
 
 /**
  * Software Endstops
