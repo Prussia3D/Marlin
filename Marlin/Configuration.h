@@ -82,6 +82,9 @@
 // Tall Bear (320mm)?
 //#define TALLBEAR
 
+// SuperPinda present?
+//#define SUPERPINDA
+
 /**
  * *** VENDORS PLEASE READ ***
  *
@@ -437,7 +440,11 @@
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
 #define TEMP_SENSOR_BED 1
-#define TEMP_SENSOR_PROBE 1
+#if ENABLED(SUPERPINDA)
+ #define TEMP_SENSOR_PROBE 0
+#else
+ #define TEMP_SENSOR_PROBE 1
+#endif
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
